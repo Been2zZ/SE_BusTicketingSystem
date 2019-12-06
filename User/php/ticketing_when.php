@@ -1,12 +1,9 @@
 <?php
-    error_reporting(E_ALL);
-    ini_set("display_errors", "On");
     session_start();
     ini_set('display_errors', '1');
     $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
     $timeNum = $_POST['timeNum'];
-    print "$timeNum";
     $_SESSION['timeNum'] = $timeNum;
 
     $query = "select * from BUS_DRIVE_DB where tmpNum='$timeNum'";
@@ -18,16 +15,17 @@
     $_SESSION['srcTime'] = $row[2];
     $_SESSION['destTime'] = $row[3];
 
-    $query2 = "UPDATE BUS_DRIVE_DB set tmpNum=0";
-    mysqli_query($conn, $query2);
-
-    $query3 = "select * from BUS_DRIVE_DB where busId='$_SESSION['busId']'";
-    $result2 = mysqli_query($conn, $query3);
+    $query2 = "select src,dest,busLevel,price from BUS_DB where busId='$row[0]'";
+    $result2 = mysqli_query($conn, $query2);
     $row2 = mysqli_fetch_array($result2);
 
-    $_SESSION['src'] = $row2[1];
-    $_SESSION['dest'] = $row2[2];
-    $_SESSION['price'] = $row2[4];
+    $query3 = "UPDATE BUS_DRIVE_DB set tmpNum=0";
+    mysqli_query($conn, $query3);
+
+    $_SESSION['src'] = $row2[0];
+    $_SESSION['dest'] = $row2[1];
+    $_SESSION['busLevel'] = $row2[2];
+    $_SESSION['price'] = $row2[3];
 
     echo "<table border = '1'>
     <tr>
@@ -40,20 +38,21 @@
     <td>가격</td>
     </tr>
     <tr>
-    <td>$row[0]</td>
-    <td>$row2[1]</td>
-    <td>$row2[2]</td>
     <td>$row[1]</td>
+    <td>$row2[0]</td>
+    <td>$row2[1]</td>
     <td>$row[2]</td>
+    <td>$row[3]</td>
+    <td>$row2[2]</td>
     <td>$row2[3]</td>
-    <td>$row2[4]</td>
     </tr>
     </table>";
+
+    if ($row2[2] == 'S') {
+      // == 'S'
+      print "<script>document.location.href='../html/s_seat.html'</script>";
+    } else {
+      // == 'A'
+      print "<script>document.location.href='../html/a_seat.html'</script>";
+    }
  ?>
-
-<meta charset="UTF-8">
-
-<form method="post" action="ticketing_seat.php">
-  <input type="text" name="seatGo" placeholder="해당 버스의 좌석 예매를 진행하시겠습니까?."><br><br>
-  <button type="submit" name="ticketing_seat">좌석 예매</button>
-</form>

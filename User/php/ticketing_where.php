@@ -37,12 +37,11 @@
       }
       echo "</table>";
     }
-
  ?>
 
 <meta charset="UTF-8">
 
 <form method="post" action="ticketing_when.php">
-  <input type="number" name="timeNum" placeholder="예매할 시간의 번호를 입력해주세요."><br><br>
+  <input type="text" name="timeNum" placeholder="예매할 시간의 번호를 입력해주세요."><br><br>
   <button type="submit" name="ticketing_when">선택</button>
 </form>
