@@ -7,6 +7,7 @@
     $passwd = $_POST["passwd"];
     $name = $_POST["name"];
     $phoneNum = $_POST["phoneNum"];
+    $mileage = 0;
 
     $query = "select * from USER_DB where id = '$id'";
     $result = mysqli_query($conn, $query);
@@ -17,7 +18,7 @@
         print "<script>alert('존재하는 아이디가 있습니다.')</script>";
         print "<script>document.location.href='../html/join.html'</script>";
     } else {
-      $query = "INSERT INTO USER_DB VALUES('$id', '$passwd', '$name', '$phoneNum')";
+      $query = "INSERT INTO USER_DB VALUES('$id', '$passwd', '$name', '$phoneNum', '$mileage')";
       $result = mysqli_query($conn, $query);
       print "<script>alert('회원가입이 완료되었습니다. 로그인을 해주세요.')</script>";
       print "<script>document.location.href='../html/login.html'</script>";
