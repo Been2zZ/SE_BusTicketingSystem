@@ -34,6 +34,6 @@
   <title>UserInfo</title>
     <button type='button' name='mod_mem' onclick="location.href='../html/modifyMem.html'"
    style='width:100pt; height:20pt'>회원정보 수정</button><br><br>
-    <button type='button' name='del_mem' onclick="location.href='../html/deleteMem.html'"
+    <button type='button' name='del_mem' onclick="location.href='deleteMem.php'"
     style='width:100pt; height:20pt'>회원 탈퇴</button><br><br>
 </html>
