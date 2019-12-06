@@ -46,11 +46,10 @@
     mysqli_close($conn);
  ?>
 
-
-<!-- <html>
-  <title>UserInfo</title>
-    <button type='button' name='mod_mem' onclick="location.href='../html/modifyMem.html'"
-   style='width:100pt; height:20pt'>회원정보 수정</button><br><br>
-    <button type='button' name='del_mem' onclick="location.href='deleteMem.php'"
-    style='width:100pt; height:20pt'>회원 탈퇴</button><br><br>
-</html> -->
+<meta charset="UTF-8">
+<html>
+    <button type='button' name='mod_ticket' value="" onclick="location.href='modifyTicket.php'"
+   style='width:100pt; height:20pt'>예매 시간 변경</button><br><br>
+    <button type='button' name='remove_ticket' onclick="location.href='removeTicket.php'"
+    style='width:100pt; height:20pt'>예매 취소</button><br><br>
+</html>

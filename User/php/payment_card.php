@@ -26,9 +26,13 @@
   $result = mysqli_query($conn, $query);
   $row = mysqli_fetch_array($result);
 
-  print "보유 마일리지 : ".$row[0];
+  print "보유 마일리지 : ".$row[0]."점<br>";
 
   $_SESSION['mileage'] = $row[0];
 ?>
 
-<input>
+<form method="post" action="payment.php">
+  <br>!마일리지 사용시 적립이 불가합니다.!<br>
+  <input type="number" name="mileage" placeholder="사용할 마일리지를 입력하세요.">점<br><br>
+  <button type="submit" name="pay">결제</button>
+</form>
