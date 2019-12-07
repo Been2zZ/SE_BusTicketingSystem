@@ -5,7 +5,6 @@
 
   $query = "select * from USER_DB";
   $result = mysqli_query($conn, $query);
-  $row = mysqli_fetch_array($result);
 
   echo "<table border = '1'>
   <tr>
@@ -14,15 +13,18 @@
   <td>이름</td>
   <td>연락처</td>
   <td>마일리지</td>
-  </tr>
-  <tr>
-  <td>$row[0]</td>
-  <td>$row[1]</td>
-  <td>$row[2]</td>
-  <td>$row[3]</td>
-  <td>$row[4]</td>
-  </tr>
-  </table>";
+  </tr>";
+
+  while ($row = mysqli_fetch_array($result)) {
+    echo "<tr>
+    <td>".$row[0]."</td>
+    <td>".$row[1]."</td>
+    <td>".$row[2]."</td>
+    <td>".$row[3]."</td>
+    <td>".$row[4]."</td>
+    </tr>";
+  }
+  echo "</table>";
 
   mysqli_close($conn);
 ?>

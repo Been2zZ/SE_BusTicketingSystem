@@ -1,8 +1,4 @@
 <!-- 정기권 선택 code 추가 -->
-<html>
-<form>
-  text<br>
-</form>
 
 <!-- 정기권 구매 -->
 <?php

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Buy season ticket</title>
+  </head>
+  <body>
+    <form method="post" action="../php/buyseasonTicket.php">
+    <label>이용하실 일 수를 선택하세요:
+      <select class="choiceday" name="choiceday" required>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="7">7</option>
+      </select>
+    </label><br><br>
+      <button type="button" name="buy" onclick="location.href='payment.html'" style="width:100pt; height:20pt">결제하기</button>
+    </form>
+  </body>
+</html>

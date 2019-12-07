@@ -17,7 +17,7 @@
       $row = mysqli_fetch_array($result);
       if ($row['pw'] == $passwd) {
         // passwd 일치 --> login
-        if ($row['id'] == 'ADMIN' && $row['pw'] == 'ADMIN') {
+        if ($row['id'] == "admin" && $row['pw'] == "admin") {
           // admin
           $_SESSION['id'] = $id;
           print "<script>document.location.href='../../Admin/html/main_admin.html'</script>";
