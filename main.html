@@ -2,15 +2,35 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./bttn.css">
+      <link rel="stylesheet" type="text/css" href="./bttn.css">
     <title>Main</title>
   </head>
-  <body>
-    <button type="button" name="busTimeTable" onclick="location.href='User/html/busTimeTable.html'" style="width:100pt; height:20pt">버스 시간표</button><br><br>
-    <!-- 비회원 예매하기 code 추가 -->
-    <button type="button" name="Ticketing" onclick="location.href='User/html/ticketing_where.html'" style="width:100pt; height:20pt">예매하기</button><br><br>
-    <!-- 비회원 예매권 조회 code 추가 -->
-    <button type="button" name="searchTicket" onclick="location.href='User/html/searchTicket.html'" style="width:100pt; height:20pt">예매권 조회</button><br><br>
-    <button type="button" name="login" onclick="location.href='User/html/login.html'" style="width:100pt; height:20pt">로그인</button><br><br>
-  </body>
+<body>
+<div class="wrapper">
+	<div class="container">
+		<h1>Welcome</h1>
+
+		<form class="form">
+      <button type="button" name="busTimeTable" onclick="location.href='User/html/busTimeTable.html'">버스 시간표</button><br><br>
+      <button type="button" name="Ticketing" onclick="location.href='User/html/ticketing_where.html'">예매하기</button><br><br>
+      <!-- 비회원 예매권 조회 code-->
+      <button type="button" name="searchTicket" onclick="location.href='User/php/user_searchTicket.php'">예매권 조회</button><br><br>
+      <button type="button" name="login" onclick="location.href='User/html/login.html'">로그인</button><br><br>
+		</form>
+	</div>
+
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+</body>
 </html>

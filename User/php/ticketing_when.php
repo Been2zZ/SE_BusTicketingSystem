@@ -50,9 +50,9 @@
 
     if ($row2[2] == 'S') {
       // == 'S'
-      print "<script>document.location.href='../html/s_seat.html'</script>";
+      print "<script>document.location.href='s_seat.php'</script>";
     } else {
       // == 'A'
-      print "<script>document.location.href='../html/a_seat.html'</script>";
+      print "<script>document.location.href='a_seat.php'</script>";
     }
  ?>

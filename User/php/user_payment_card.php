@@ -15,6 +15,14 @@
     <input type="number" pattern="[0-9]">
   </label><br>
 
-  <form method="post" action="../php/payment.php">
-    <button type="submit" name="pay">결제</button>
-  </form>
+<?php
+  session_start();
+  ini_set('display_errors', '1');
+  $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
+
+
+?>
+
+<form method="post" action="payment.php">
+  <button type="submit" name="pay">결제</button>
+</form>

@@ -10,7 +10,7 @@
     $busLevel = $_POST["busLevel"];
     $price = $_POST["price"];
 
-    $query = "select * from BUS_DB where id = '$busId'";
+    $query = "select * from BUS_DB where busId = '$busId'";
     $result = mysqli_query($conn, $query);
     $count = mysqli_num_rows($result);
 

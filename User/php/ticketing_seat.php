@@ -30,11 +30,19 @@
     <td>".$_SESSION['price']."</td>
     </tr>
     </table>";
+
+    if ($_SESSION['id'] == null) {
+      // 비회원
+      print "<script>document.location.href='../html/user_phoneNumPayment.html'</script>";
+    } else {
+      // 회원
+      print "<script>document.location.href='../html/payment.html'</script>";
+    }
  ?>
 
-<meta charset="UTF-8">
+<!-- <meta charset="UTF-8">
 
 <form method="post" action="../html/payment.html">
   결제를 진행하시겠습니까? <br>
   <button type="submit" name="payment">결제</button>
-</form>
+</form> -->

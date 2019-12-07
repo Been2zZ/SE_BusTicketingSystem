@@ -1,3 +1,4 @@
+
 <?php
     session_start();
     ini_set('display_errors', '1');
@@ -33,7 +34,7 @@
         echo "<td>$row2[1]</td>";
         echo "<td>$row2[2]</td>";
         echo "<td>$row[3]</td>";
-        echo "<td>$row[4]</tr>";
+        echo "<td>$row[4]</td></tr>";
       }
       echo "</table>";
     }

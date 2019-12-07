@@ -3,17 +3,18 @@
   ini_set('display_errors', '1');
   $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
-  $id = $_SESSION['id'];
-  $busId = $_SESSION['busId'];
   $day = $_SESSION['day'];
+  $src = $_SESSION['src'];
+  $dest = $_SESSION['dest'];
   $srcTime = $_SESSION['srcTime'];
   $destTime = $_SESSION['destTime'];
 
-  $query = "select seatNum from TICKET where busId='$busId' and day='$day' and srcTime='$srcTime' and destTime='$destTime'";
+  $query = "select seatNum from TICKET where day='$day' and src='$src' and dest='$dest' and srcTime='$srcTime' and destTime='$destTime'";
   $result = mysqli_query($conn, $query);
 
   echo "이미 예약이 완료된 좌석의 목록입니다.";
-  while ($row = mysqli_fetch_array($result);) {
+
+  while ($row = mysqli_fetch_array($result)) {
     echo $row[0]."<br>";
   }
 ?>
@@ -22,7 +23,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Bus Ticketing System</title>
+    <title>A_seat</title>
   </head>
   <body>
     <form method="post" action="ticketing_seat.php">
