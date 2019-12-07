@@ -6,7 +6,7 @@
     $id = $_SESSION['id'];
 
     $query = "select day,src,dest,srcTime,destTime,seatNum,price from TICKET where userId = '$id'";
-    $result = mysqli_query($conn, $query)or die(mysqli_error($conn));;
+    $result = mysqli_query($conn, $query)or die(mysqli_error($conn));
 
     $num = 1;
 
@@ -15,9 +15,9 @@
 
       $in_num = (string)$num;
 
-      $query2 = "insert into TICKET(num) value('$in_num')
+      $query2 = "UPDATE TICKET SET num='$in_num'
       where day='$row[0]' and src='$row[1]' and dest='$row[2]' and srcTime='$row[3]' and seatNum='$row[5]' and price='$row[6]'";
-      mysqli_query($conn, $query2);
+      mysqli_query($conn, $query2) or die(mysqli_error($conn));
 
       echo "<table border = '1'>
       <tr>
@@ -50,7 +50,7 @@
 <meta charset="UTF-8">
 <html>
 <form>
-    <button type='button' name='mod_ticket' value="" onclick="location.href='modifyTicket.php'"
+    <button type='button' name='mod_ticket' onclick="location.href='modifyTicket.php'"
    style='width:100pt; height:20pt'>예매 시간 변경</button><br><br>
     <button type='button' name='remove_ticket' onclick="location.href='removeTicket.php'"
     style='width:100pt; height:20pt'>예매 취소</button><br><br>

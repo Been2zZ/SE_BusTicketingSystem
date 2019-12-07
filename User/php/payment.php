@@ -18,7 +18,7 @@
 
     $query = "INSERT INTO TICKET(num, day, src, dest, srcTime, destTime, seatNum, price, phoneNum)
     values('$null', '$day', '$src', '$dest', '$srcTime', '$destTime', '$seatNum', '$price', '$phoneNum')";
-    mysqli_query($conn, $query);
+    mysqli_query($conn, $query) or die(mysqli_error($conn));
 
     print "<script>alert('결제가 완료되었습니다.')</script>";
     print "<script>document.location.href='../../main.html'</script>";
@@ -50,8 +50,8 @@
 
     $query2 = "INSERT INTO TICKET(num, day, src, dest, srcTime, destTime, seatNum, price, userId)
     values('$null', '$day', '$src', '$dest', '$srcTime', '$destTime', '$seatNum', '$price', '$id')";
-    
-    mysqli_query($conn, $query2);
+
+    mysqli_query($conn, $query2) or die(mysqli_error($conn));
 
     print "<script>alert('결제가 완료되었습니다.')</script>";
     print "<script>document.location.href='../html/main_mem.html'</script>";
