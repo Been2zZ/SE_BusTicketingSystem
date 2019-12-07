@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <title>Modify BUS seat</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
 <?php
     session_start();
     ini_set('display_errors', '1');
@@ -8,18 +18,24 @@
 
     $new_srcTime = $_SESSION['new_srcTime'];
 
-    echo $seatNum;
-
-    echo "<table border = '1'>
+    echo "<section><div class='tbl-header'>
+    <table cellpadding='0' cellspacing='0' border='0'>
+    <thead>
     <tr>
-    <td>날짜</td>
-    <td>출발지</td>
-    <td>도착지</td>
-    <td>출발시간</td>
-    <td>도착시간</td>
-    <td>버스등급</td>
-    <td>좌석번호</td>
-    </tr>
+    <th>날짜</th>
+    <th>출발지</th>
+    <th>도착지</th>
+    <th>출발시간</th>
+    <th>도착시간</th>
+    <th>버스등급</th>
+    <th>좌석번호</th>
+    </tr></thead>
+    </table>
+    </div>";
+
+    echo "<div class='tbl-content'>
+    <table cellpadding='0' cellspacing='0' border='0'>
+    <tbody>
     <tr>
     <td>".$_SESSION['day']."</td>
     <td>".$_SESSION['src']."</td>
@@ -60,3 +76,19 @@
     }
 
  ?>
+</div>
+<ul class="bg-bubbles">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+</body>
+</html>

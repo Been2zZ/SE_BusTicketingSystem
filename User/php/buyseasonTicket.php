@@ -1,4 +1,3 @@
-<!-- 정기권 선택 code 추가 -->
 
 <!-- 정기권 구매 -->
 <?php
@@ -9,7 +8,8 @@
   $id = $_SESSION['id'];
   $season = $_POST['season'];
 
-  // 정기권 결제 code 추가
+  // $_POST 로 정기권 일 수 받아온 후, [정기권 일수,구매 날짜:now()] USER_DB에 저장
+  // 정기권 일수, 구매날짜 - update
 
   $query = "UPDATE USER_DB SET season='$season' where id='$id'";
   mysqli_query($conn, $query);

@@ -1,19 +1,49 @@
+<!-- !!php 보내서 USER_DB에 season column 값 정기권 일 수로 update !! -->
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
     <title>Buy season ticket</title>
   </head>
   <body>
+    <div class="wrapper">
+      <div class="container">
     <form method="post" action="../php/buyseasonTicket.php">
-    <label>이용하실 일 수를 선택하세요:
+
+<!-- before -->
+    <label>구매할 정기권의 일 수를 선택하세요 :
       <select class="choiceday" name="choiceday" required>
         <option value="4">4</option>
         <option value="5">5</option>
         <option value="7">7</option>
       </select>
-    </label><br><br>
-      <button type="button" name="buy" onclick="location.href='payment.html'" style="width:100pt; height:20pt">결제하기</button>
+      </label>
+      <br><br>
+        <button type="button" name="buy" onclick="location.href='seasonTicket_payment.html'">결제하기</button>
+<!-- before -->
+
+<!-- after -->
+<!-- !! button으로 값(가격) 전달 !! -->
+  <!-- <button type="button" name="4" onclick="location.href='user_payment.html'">4일권 구매</button><br><br>
+  <button type="button" name="5" onclick="location.href='user_payment.html'">5일권 구매</button><br><br>
+  <button type="button" name="7" onclick="location.href='user_payment.html'">7일권 구매</button><br><br> -->
+<!-- after -->
     </form>
-  </body>
-</html>
+    </div>
+    <ul class="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    </ul>
+    </div>
+    </body>
+    </html>

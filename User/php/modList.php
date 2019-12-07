@@ -1,6 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <title>Modify List</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
 <?php
   session_start();
-  ini_set('display_errors', '1');
+  // ini_set('display_errors', '1');
   $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
   $modNum = $_SESSION['modNum'];  // 수정할 예매권의 번호
@@ -33,13 +43,19 @@
   $query3 = "SELECT srcTime,destTime from BUS_DRIVE_DB where busId='$row2[0]' and day='$row[0]' and srcTime != '$row[3]'";
   $result3 = mysqli_query($conn, $query3) or die(mysqli_error($conn));
 
-  echo "변경 가능한 시간의 목록입니다.<br>";
-
-  echo "<table border = '1'>
+  echo "<section><h2>변경 가능한 시간의 목록입니다.<h2><br><div class='tbl-header'>
+  <table cellpadding='0' cellspacing='0' border='0'>
+  <thead>
   <tr>
   <td>출발시간</td>
   <td>도착시간</td>
-  </tr>";
+  </tr></thead>
+  </table>
+  </div>";
+
+  echo"<div class='tbl-content'>
+  <table cellpadding='0' cellspacing='0' border='0'>
+  <tbody>";
 
   while ($row3 = mysqli_fetch_array($result3)) {
     // 변경가능한 시간표
@@ -49,16 +65,36 @@
     </tr>";
   }
 
-  echo "</table>";
+  echo "</tbody></table></div></section>";
   mysqli_close($conn);
 ?>
 
 <meta charset="UTF-8">
 
 <form method="post" action="modifyTime.php">
-  <br>운행 날짜를 입력해주세요.<br>
-  <input type="text" name="new_src_hour" placeholder="시 (hour)">:
-  <input type="text" name="new_src_min" placeholder="분 (min)">:
-  <input type="text" name="new_src_sec" placeholder="초 (sec)">
+  <h2>변경하고자하는 출발 시간을 입력해주세요.<h2><br>
+  <div class="container-width">
+  <input type="text" name="new_src_hour" placeholder="시 (hour)"></div> :
+  <div class="container-width">
+  <input type="text" name="new_src_min" placeholder="분 (min)"></div> :
+  <div class="container-width">
+  <input type="text" name="new_src_sec" placeholder="초 (sec)"></div>
+  <br><br>
   <button type="submit" name="inputmod">입력</button>
 </form>
+</div>
+<ul class="bg-bubbles">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+</body>
+</html>

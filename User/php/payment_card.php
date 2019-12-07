@@ -1,4 +1,14 @@
-<meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="./bttn.css?after">
+    <title>Payment : Card</title>
+  </head>
+<body>
+<div class="wrapper">
+	<div class="container">
+    <form>
   <label>카드번호 :
     <input type="number" size="4" pattern="[0-9]">
     <input type="number" size="4" pattern="[0-9]">
@@ -9,6 +19,7 @@
     <input type="number" size="2" pattern="[0-9]">년
     <input type="number" size="2" pattern="[0-9]">일
   </label><br>
+</form>
 
 <?php
   session_start();
@@ -31,3 +42,19 @@
   <input type="number" name="mileage" placeholder="사용할 마일리지를 입력하세요.">점<br><br>
   <button type="submit" name="pay">결제</button>
 </form>
+</div>
+<ul class="bg-bubbles">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+</div>
+</body>
+</html>

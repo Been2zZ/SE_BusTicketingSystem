@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <title>Delete User</title>
+  </head>
+  <body>
+    <div class="wrapper">
+    <div class="container">
 <?php
   session_start();
   ini_set('display_errors', '1');
@@ -6,14 +16,22 @@
   $query = "select * from USER_DB";
   $result = mysqli_query($conn, $query);
 
-  echo "<table border = '1'>
+  echo "<section><div class='tbl-header'>
+  <table cellpadding='0' cellspacing='0' border='0'>
+  <thead>
   <tr>
   <td>아이디</td>
   <td>비밀번호</td>
   <td>이름</td>
   <td>연락처</td>
   <td>마일리지</td>
-  </tr>";
+  </tr></thead>
+  </table>
+  </div>";
+
+  echo"<div class='tbl-content'>
+  <table cellpadding='0' cellspacing='0' border='0'>
+  <tbody>";
 
   while ($row = mysqli_fetch_array($result)) {
     echo "<tr>
@@ -24,21 +42,29 @@
     <td>".$row[4]."</td>
     </tr>";
   }
-  echo "</table>";
+  echo "</tbody></table></div></section>";
 
   mysqli_close($conn);
 ?>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>del_mem</title>
-  </head>
-  <body>
-    <form method="post" action="delete.php">
-      <input type="text" name="userId" placeholder="삭제하려는 회원의 아이디를 입력해주세요."><br><br>
-      <button type="submit" name="a_seat">삭제</button>
+
+<form method="post" action="delete.php">
+<input type="text" name="userId" placeholder="삭제하려는 회원의 아이디를 입력해주세요."><br><br>
+<button type="submit" name="a_seat">삭제</button>
     </form>
+  </div>
+  <ul class="bg-bubbles">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
   </body>
-</html>
+  </html>

@@ -39,10 +39,3 @@
       print "<script>document.location.href='../html/payment.html'</script>";
     }
  ?>
-
-<!-- <meta charset="UTF-8">
-
-<form method="post" action="../html/payment.html">
-  결제를 진행하시겠습니까? <br>
-  <button type="submit" name="payment">결제</button>
-</form> -->

@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <title>S level seat</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+
 <?php
   session_start();
   ini_set('display_errors', '1');
@@ -19,18 +30,24 @@
   }
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>S_seat</title>
-  </head>
-  <body>
     <form method="post" action="mod_ticketing_seat.php">
       <img src="s.seat.png" width='300px' height='400px'><br>
       <input type="text" name="seatNum" placeholder="좌석 번호를 입력해주세요."><br><br>
       <button type="submit" name="s_seat">선택</button>
     </form>
+  </div>
+  <ul class="bg-bubbles">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
   </body>
-</html>
+  </html>

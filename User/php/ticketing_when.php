@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <title>Search Ticket</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
 <?php
     session_start();
     ini_set('display_errors', '1');
@@ -27,16 +37,23 @@
     $_SESSION['busLevel'] = $row2[2];
     $_SESSION['price'] = $row2[3];
 
-    echo "<table border = '1'>
+    echo "<section><div class='tbl-header'>
+    <table cellpadding='0' cellspacing='0' border='0'>
+    <thead>
     <tr>
-    <td>날짜</td>
-    <td>출발지</td>
-    <td>도착지</td>
-    <td>출발시간</td>
-    <td>도착시간</td>
-    <td>버스등급</td>
-    <td>가격</td>
-    </tr>
+    <th>날짜</th>
+    <th>출발지</th>
+    <th>도착지</th>
+    <th>출발시간</th>
+    <th>도착시간</th>
+    <th>버스등급</th>
+    <th>가격</th>
+    </tr></thead>
+    </table>
+    </div>
+    <div class='tbl-content'>
+    <table cellpadding='0' cellspacing='0' border='0'>
+    <tbody>
     <tr>
     <td>$row[1]</td>
     <td>$row2[0]</td>
@@ -45,8 +62,7 @@
     <td>$row[3]</td>
     <td>$row2[2]</td>
     <td>$row2[3]</td>
-    </tr>
-    </table>";
+    </tr></tbody></table></div></section>";
 
     if ($row2[2] == 'S') {
       // == 'S'
@@ -56,3 +72,20 @@
       print "<script>document.location.href='a_seat.php'</script>";
     }
  ?>
+
+</div>
+<ul class="bg-bubbles">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <title>User modify Ticket</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+
 <?php
     session_start();
     ini_set('display_errors', '1');
@@ -8,17 +19,25 @@
     $query = "select num,day,src,dest,srcTime,destTime,seatNum,price from TICKET where phoneNum = '$phoneNum'";
     $result = mysqli_query($conn, $query);
 
-    echo "<table border = '1'>
+    echo "<section><div class='tbl-header'>
+    <table cellpadding='0' cellspacing='0' border='0'>
+    <thead>
     <tr>
-    <td>번호</td>
-    <td>날짜</td>
-    <td>출발지</td>
-    <td>도착지</td>
-    <td>출발시간</td>
-    <td>도착시간</td>
-    <td>좌석번호</td>
-    <td>가격</td>
-    </tr>";
+    <th>번호</th>
+    <th>날짜</th>
+    <th>출발지</th>
+    <th>도착지</th>
+    <th>출발시간</th>
+    <v>도착시간</th>
+    <th>좌석번호</th>
+    <th>가격</th>
+    </tr></thead>
+    </table>
+    </div>";
+
+    echo"<div class='tbl-content'>
+    <table cellpadding='0' cellspacing='0' border='0'>
+    <tbody>";
 
     while ($row = mysqli_fetch_array($result)) {
       echo "<tr>
@@ -33,21 +52,27 @@
       </tr>";
     }
 
-    echo "</table>";
+    echo "</tbody></table></div></section>";
 
     mysqli_close($conn);
  ?>
-
- <!DOCTYPE html>
- <html lang="en" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-     <title>modify Ticket</title>
-   </head>
-   <body>
      <form method="post" action="modifyTicket.php">
        <input type="text" name="TicketNum" placeholder="시간 변경을 원하는 예매권의 번호를 입력해주세요."><br><br>
        <button type="submit" name="inputTicketNum">입력</button>
      </form>
+   </div>
+   <ul class="bg-bubbles">
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   </ul>
+   </div>
    </body>
- </html>
+   </html>

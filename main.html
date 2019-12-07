@@ -2,20 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-      <link rel="stylesheet" type="text/css" href="./bttn.css">
+      <link rel="stylesheet" type="text/css" href="./bttn.css?after">
+      <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+      <style>
+        p.r {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 30px;
+        }
+        p.l {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 80px;
+        }
+</style>
     <title>Main</title>
   </head>
 <body>
 <div class="wrapper">
 	<div class="container">
-		<h1>Welcome</h1>
+		<h1><p class="l">Welcome</p></h1>
 
 		<form class="form">
-      <button type="button" name="busTimeTable" onclick="location.href='User/html/busTimeTable.html'">버스 시간표</button><br><br>
-      <button type="button" name="Ticketing" onclick="location.href='User/html/ticketing_where.html'">예매하기</button><br><br>
+      <button type="button" name="busTimeTable" onclick="location.href='User/html/busTimeTable.html'"><p class="r">버스 시간표</p></button><br><br>
+      <button type="button" name="Ticketing" onclick="location.href='User/html/ticketing_where.html'"><p class="r">예매하기</p></button><br><br>
       <!-- 비회원 예매권 조회 code-->
-      <button type="button" name="searchTicket" onclick="location.href='User/php/user_searchTicket.php'">예매권 조회</button><br><br>
-      <button type="button" name="login" onclick="location.href='User/html/login.html'">로그인</button><br><br>
+      <button type="button" name="searchTicket" onclick="location.href='User/php/user_searchTicket.php'"><p class="r">예매권 조회</p></button><br><br>
+      <button type="button" name="login" onclick="location.href='User/html/login.html'"><p class="r">로그인</p></button><br><br>
 		</form>
 	</div>
 

@@ -1,7 +1,16 @@
-<!-- remove Ticket 복붙 code임 수정 -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <title>Remove Ticket</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
 <?php
   session_start();
-  ini_set('display_errors', '1');
+  // ini_set('display_errors', '1');
   $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
 
@@ -17,17 +26,26 @@
 
   $result = mysqli_query($conn, $query);
 
-  echo "<table border = '1'>
+  echo "<section><h2>보유한 예매권 목록입니다.<h2><br><div class='tbl-header'>
+  <table cellpadding='0' cellspacing='0' border='0'>
+  <thead>
   <tr>
-  <td>번호</td>
-  <td>날짜</td>
-  <td>출발지</td>
-  <td>도착지</td>
-  <td>출발시간</td>
-  <td>도착시간</td>
-  <td>좌석번호</td>
-  <td>가격</td>
-  </tr>";
+  <th>번호</th>
+  <th>날짜</th>
+  <th>출발지</th>
+  <th>도착지</th>
+  <th>출발시간</th>
+  <th>도착시간</th>
+  <th>좌석번호</th>
+  <th>가격</th>
+  </tr></thead>
+  </table>
+  </div>";
+
+  echo "<div class='tbl-content'>
+  <table cellpadding='0' cellspacing='0' border='0'>
+  <tbody>";
+
 
   while ($row = mysqli_fetch_array($result)) {
     echo "<tr>
@@ -42,14 +60,29 @@
     </tr>";
   }
 
-  echo "</table>";
+  echo "</tbody></table></div></section>";
 
   mysqli_close($conn);
 ?>
 
-<meta charset="UTF-8">
-
 <form method="post" action="remove.php">
-  <input type="text" name="delNum" placeholder="삭제할 예매권의 번호를 입력해주세요."><br><br>
+  <h2>삭제할 예매권의 번호를 입력해주세요.</h2><br>
+  <input type="text" name="delNum" placeholder="번호를 입력해주세요..."><br>
   <button type="submit" name="ticketing_when">입력</button>
 </form>
+</div>
+<ul class="bg-bubbles">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+</body>
+</html>
