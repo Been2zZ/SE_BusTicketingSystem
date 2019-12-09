@@ -32,7 +32,7 @@
 
     <form method="post" action="mod_ticketing_seat.php">
       <img src="s.seat.png" width='300px' height='400px'><br>
-      <input type="text" name="seatNum" placeholder="좌석 번호를 입력해주세요."><br><br>
+      <input type="text" name="seatNum" placeholder="좌석 번호를 입력해주세요." required=''><br><br>
       <button type="submit" name="s_seat">선택</button>
     </form>
   </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
-    <title>A level seat</title>
+    <title>Bus Time table</title>
   </head>
   <body>
     <div class="wrapper">
@@ -29,6 +29,8 @@
       echo $_POST['month']."월 ";
       echo $_POST['day']."일 ";
       echo "$row[1] -> $row[2]"."<h1>";
+      echo "버스 등급 : ".$row[3];
+
 
       echo "<section><div class='tbl-header'>
       <table cellpadding='0' cellspacing='0' border='0'>

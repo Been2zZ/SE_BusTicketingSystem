@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
     <title>Search Ticket</title>
   </head>
   <body>
@@ -68,8 +69,8 @@
     mysqli_close($conn);
  ?>
 <form>
-    <button type='button' name='mod_ticket' onclick="location.href='modifyTicket.php'">예매 시간 변경</button><br><br>
-    <button type='button' name='remove_ticket' onclick="location.href='removeTicket.php'">예매 취소</button><br><br>
+    <button type='button' style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" name='mod_ticket' onclick="location.href='modifyTicket.php'">예매 시간 변경</button><br><br>
+    <button type='button' style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" name='remove_ticket' onclick="location.href='removeTicket.php'">예매 취소</button><br><br>
   </form>
   </div>
   <ul class="bg-bubbles">

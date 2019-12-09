@@ -67,7 +67,7 @@
 
 <form method="post" action="remove.php">
   <h2>삭제할 예매권의 번호를 입력해주세요.</h2><br>
-  <input type="text" name="delNum" placeholder="번호를 입력해주세요..."><br>
+  <input type="text" name="delNum" placeholder="번호를 입력해주세요..." required=''><br>
   <button type="submit" name="ticketing_when">입력</button>
 </form>
 </div>

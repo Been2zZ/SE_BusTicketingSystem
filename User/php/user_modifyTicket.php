@@ -57,7 +57,7 @@
     mysqli_close($conn);
  ?>
      <form method="post" action="modifyTicket.php">
-       <input type="text" name="TicketNum" placeholder="시간 변경을 원하는 예매권의 번호를 입력해주세요."><br><br>
+       <input type="text" name="TicketNum" required='' placeholder="시간 변경을 원하는 예매권의 번호를 입력해주세요."><br><br>
        <button type="submit" name="inputTicketNum">입력</button>
      </form>
    </div>

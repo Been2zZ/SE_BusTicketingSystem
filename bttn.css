@@ -96,7 +96,7 @@ form input {
   margin: 0 auto 10px auto;
   display: block;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   transition-duration: 0.25s;
   font-weight: 300;
@@ -104,6 +104,7 @@ form input {
 
 form input::placeholder {
   /* placeholder 폰트 설정 추가 */
+  /* font-family: 'Do Hyeon', sans-serif; */
   color: #369F36;
   opacity: 0.5;
 }
@@ -290,41 +291,18 @@ td{
 /* demo styles */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+@import url(https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean);
 body{
   /* background: -webkit-linear-gradient(left, #25c481, #25b7c4);
   background: linear-gradient(to right, #25c481, #25b7c4); */
   background: #50a3a2;
   background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 15px;
 }
 section{
   margin: 50px;
-}
-
-
-/* follow me template */
-.made-with-love {
-  margin-top: 40px;
-  padding: 10px;
-  clear: left;
-  text-align: center;
-  font-size: 10px;
-  font-family: arial;
-  color: #fff;
-}
-.made-with-love i {
-  font-style: normal;
-  color: #F50057;
-  font-size: 14px;
-  position: relative;
-  top: 2px;
-}
-.made-with-love a {
-  color: #fff;
-  text-decoration: none;
-}
-.made-with-love a:hover {
-  text-decoration: underline;
 }
 
 

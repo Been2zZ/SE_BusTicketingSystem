@@ -10,14 +10,14 @@
 	<div class="container">
     <form>
   <label>카드번호 :
-    <input type="number" size="4" pattern="[0-9]">
-    <input type="number" size="4" pattern="[0-9]">
-    <input type="number" size="4" pattern="[0-9]">
-    <input type="number" size="4" pattern="[0-9]"></label><br>
-  <label>cvc번호 :  <input type="number" size="4" pattern="[0-9]"></label><br>
+    <input type="number" size="4" pattern="[0-9]" required=''>
+    <input type="number" size="4" pattern="[0-9]" required=''>
+    <input type="number" size="4" pattern="[0-9]" required=''>
+    <input type="number" size="4" pattern="[0-9]" required=''></label><br>
+  <label>cvc번호 :  <input type="number" size="4" pattern="[0-9]" required=''></label><br>
   <label>유효기간 :
-    <input type="number" size="2" pattern="[0-9]">년
-    <input type="number" size="2" pattern="[0-9]">일
+    <input type="number" size="2" pattern="[0-9]" required=''>년
+    <input type="number" size="2" pattern="[0-9]" required=''>일
   </label><br>
 </form>
 
@@ -39,7 +39,7 @@
 
 <form method="post" action="payment.php">
   <br>!마일리지 사용시 적립이 불가합니다.!<br>
-  <input type="number" name="mileage" placeholder="사용할 마일리지를 입력하세요.">점<br><br>
+  <input type="number" name="mileage" placeholder="사용할 마일리지를 입력하세요." required=''>점<br><br>
   <button type="submit" name="pay">결제</button>
 </form>
 </div>

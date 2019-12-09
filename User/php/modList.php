@@ -74,11 +74,11 @@
 <form method="post" action="modifyTime.php">
   <h2>변경하고자하는 출발 시간을 입력해주세요.<h2><br>
   <div class="container-width">
-  <input type="text" name="new_src_hour" placeholder="시 (hour)"></div> :
+  <input type="text" name="new_src_hour" placeholder="시 (hour)" required=''></div> :
   <div class="container-width">
-  <input type="text" name="new_src_min" placeholder="분 (min)"></div> :
+  <input type="text" name="new_src_min" placeholder="분 (min)" required=''></div> :
   <div class="container-width">
-  <input type="text" name="new_src_sec" placeholder="초 (sec)"></div>
+  <input type="text" name="new_src_sec" placeholder="초 (sec)" required=''></div>
   <br><br>
   <button type="submit" name="inputmod">입력</button>
 </form>

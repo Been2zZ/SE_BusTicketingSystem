@@ -5,23 +5,30 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+    <style>
+      p.r {
+      font-family: 'Do Hyeon', sans-serif;
+      font-size: 40px;
+      }
+    </style>
     <title>Buy season ticket</title>
   </head>
   <body>
     <div class="wrapper">
       <div class="container">
     <form method="post" action="../php/buyseasonTicket.php">
-
 <!-- before -->
-    <label>구매할 정기권의 일 수를 선택하세요 :
-      <select class="choiceday" name="choiceday" required>
+    <label><p class="r">구매할 정기권의 일 수를 선택하세요.</p>
+      <select class="choiceday" name="choiceday" required=''>
         <option value="4">4</option>
         <option value="5">5</option>
         <option value="7">7</option>
       </select>
       </label>
       <br><br>
-        <button type="button" name="buy" onclick="location.href='seasonTicket_payment.html'">결제하기</button>
+        <button type="submit" name="buy"><p class="r">결제하기</p></button>
+        <!-- onclick="location.href='seasonTicket_payment.html'" -->
 <!-- before -->
 
 <!-- after -->

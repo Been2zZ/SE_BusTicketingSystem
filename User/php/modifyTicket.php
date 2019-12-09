@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
     <title>Modify Ticket</title>
   </head>
   <body>
@@ -64,9 +65,9 @@
 ?>
 
 <form method="post" action="modify.php">
-  <h2>시간을 변경할 예매권의 번호를 입력해주세요.<h2><br>
-  <input type="text" name="modNum" placeholder="예매권 번호를 입력하세요..."><br>
-  <button type="submit" name="inputmod">입력</button>
+  <h2  style="font-family: 'Do Hyeon', sans-serif; font-size:30px;">시간을 변경할 예매권의 번호를 입력해주세요.<h2>
+  <input type="text" name="modNum" placeholder="예매권 번호를 입력하세요..." required=''><br>
+  <button type="submit"  style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" name="inputmod">입력</button>
 </form>
 </div>
 <ul class="bg-bubbles">

@@ -11,11 +11,11 @@
     <form>
 <label> 은행사를 입력하세요.<br>
   <div class="container-width">
-  <input type="text"></div><br>
+  <input type="text" required=''></div><br>
 </label><br>
 <label> 계좌번호를 입력하세요.<br>
   <div class="container-width">
-  <input type="text" pattern="[0-9]"></div><br>
+  <input type="text" pattern="[0-9]" required=''></div><br>
 </label><br>
 </form>
 
@@ -37,7 +37,7 @@
 
 <form method="post" action="payment.php">
   <br>!마일리지 사용시 적립이 불가합니다.!<br>
-  <input type="number" name="mileage" placeholder="사용할 마일리지를 입력하세요.">점<br><br>
+  <input type="number" name="mileage" placeholder="사용할 마일리지를 입력하세요." required=''>점<br><br>
   <button type="submit" name="pay">결제</button>
 </form>
 </div>
