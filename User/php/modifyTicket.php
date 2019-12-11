@@ -17,16 +17,19 @@
   if ($_SESSION['id'] == null) {
     // 비회원
     $phoneNum = $_SESSION['phoneNum'];
-    $query = "select num,day,src,dest,srcTime,destTime,seatNum,price from TICKET where phoneNum = '$phoneNum'";
+    $query = "select num,day,src,dest,srcTime,destTime,seatNum,price from TICKET where phoneNum = '$phoneNum' order by srcTime";
   } else {
     // 회원
     $id = $_SESSION['id'];
-    $query = "select num,day,src,dest,srcTime,destTime,seatNum,price from TICKET where userId = '$id'";
+    $query = "select num,day,src,dest,srcTime,destTime,seatNum,price from TICKET where userId = '$id' order by srcTime";
   }
 
   $result = mysqli_query($conn, $query);
 
-  echo "<section><div class='tbl-header'>
+  echo "<section>
+  <div></div>
+  <div>
+  <div class='tbl-header'>
   <table cellpadding='0' cellspacing='0' border='0'>
   <thead>
   <tr>
@@ -59,15 +62,20 @@
     </tr>";
   }
 
-  echo "</tbody></table></div></section>";
+  echo "</tbody></table></div>
+  </div>
+  <div></div>
+  </section>";
 
   mysqli_close($conn);
 ?>
 
 <form method="post" action="modify.php">
   <h2  style="font-family: 'Do Hyeon', sans-serif; font-size:30px;">시간을 변경할 예매권의 번호를 입력해주세요.<h2>
-  <input type="text" name="modNum" placeholder="예매권 번호를 입력하세요..." required=''><br>
+  <input type="text" name="modNum" placeholder="예매권 번호를 입력하세요..." required=''>
   <button type="submit"  style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" name="inputmod">입력</button>
+<br><br>
+  <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
 </form>
 </div>
 <ul class="bg-bubbles">

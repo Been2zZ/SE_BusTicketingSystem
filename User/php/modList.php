@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
     <title>Modify List</title>
   </head>
   <body>
@@ -40,10 +41,12 @@
 
   $_SESSION['modBusId'] = $row2[0];
 
-  $query3 = "SELECT srcTime,destTime from BUS_DRIVE_DB where busId='$row2[0]' and day='$row[0]' and srcTime != '$row[3]'";
+  $query3 = "SELECT srcTime,destTime from BUS_DRIVE_DB where busId='$row2[0]' and day='$row[0]' and srcTime != '$row[3]' order by srcTime";
   $result3 = mysqli_query($conn, $query3) or die(mysqli_error($conn));
 
-  echo "<section><h2>변경 가능한 시간의 목록입니다.<h2><br><div class='tbl-header'>
+  echo "<h2>변경 가능한 시간의 목록입니다.<h2><section>
+  <div></div>
+  <div><div class='tbl-header'>
   <table cellpadding='0' cellspacing='0' border='0'>
   <thead>
   <tr>
@@ -65,7 +68,10 @@
     </tr>";
   }
 
-  echo "</tbody></table></div></section>";
+  echo "</tbody></table></div>
+  </div>
+  <div></div>
+  </section>";
   mysqli_close($conn);
 ?>
 
@@ -79,8 +85,10 @@
   <input type="text" name="new_src_min" placeholder="분 (min)" required=''></div> :
   <div class="container-width">
   <input type="text" name="new_src_sec" placeholder="초 (sec)" required=''></div>
+  <br>
+  <button type="submit" style="font-family:'Do Hyeon'; font-size:40px;" name="inputmod">입력</button>
   <br><br>
-  <button type="submit" name="inputmod">입력</button>
+  <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
 </form>
 </div>
 <ul class="bg-bubbles">

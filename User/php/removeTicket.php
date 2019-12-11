@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
     <title>Remove Ticket</title>
   </head>
   <body>
@@ -26,7 +27,10 @@
 
   $result = mysqli_query($conn, $query);
 
-  echo "<section><h2>보유한 예매권 목록입니다.<h2><br><div class='tbl-header'>
+  echo "<h2>보유한 예매권 목록입니다.<h2><section>
+  <div></div>
+  <div>
+  <div class='tbl-header'>
   <table cellpadding='0' cellspacing='0' border='0'>
   <thead>
   <tr>
@@ -60,15 +64,20 @@
     </tr>";
   }
 
-  echo "</tbody></table></div></section>";
+  echo "</tbody></table></div>
+  </div>
+  <div></div>
+  </section>";
 
   mysqli_close($conn);
 ?>
 
 <form method="post" action="remove.php">
-  <h2>삭제할 예매권의 번호를 입력해주세요.</h2><br>
-  <input type="text" name="delNum" placeholder="번호를 입력해주세요..." required=''><br>
-  <button type="submit" name="ticketing_when">입력</button>
+  <h2>삭제할 예매권의 번호를 입력해주세요.</h2>
+  <input type="text" name="delNum" placeholder="번호를 입력해주세요..." required=''>
+  <button type="submit" style="font-family:'Do Hyeon'; font-size:40px;" name="ticketing_when">입력</button>
+  <br><br>
+    <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
 </form>
 </div>
 <ul class="bg-bubbles">

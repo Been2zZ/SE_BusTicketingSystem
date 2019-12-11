@@ -26,7 +26,10 @@
       $default = $row[5];
     }
 
-    echo "<section><div class='tbl-header'>
+    echo "<section>
+    <div></div>
+    <div>
+    <div class='tbl-header'>
     <table cellpadding='0' cellspacing='0' border='0'>
     <thead>
     <tr>
@@ -50,13 +53,18 @@
     <td>$row[4]</td>
     <td>$default</td>
     </tr>
-    </tbody></table></div></section>";
+    </tbody></table></div>
+    </div>
+    <div></div>
+    </section>";
 
     mysqli_close($conn);
  ?>
 <form>
     <button type='button' name='mod_mem' style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" onclick="location.href='../html/modifyMem.html'">회원정보 수정</button><br><br>
     <button type='button' name='del_mem' style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" onclick="location.href='deleteMem.php'">회원 탈퇴</button><br><br>
+    <br><br>
+    <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
 </form>
 </div>
   <ul class="bg-bubbles">

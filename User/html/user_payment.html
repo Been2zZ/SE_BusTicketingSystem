@@ -3,15 +3,24 @@
   <head>
     <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+      <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+      <style>
+        p.r {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 40px;
+        }
+      </style>
     <title>Payment Methond</title>
   </head>
   <body>
     <div class="wrapper">
       <div class="container">
 <form>
-      <h2>결제할 수단을 선택해주세요.<h2><br>
-        <button type="button" name="card" onclick="location.href='user_payment_card.html'">카드결제</button><br><br>
-        <button type="button" name="account" onclick="location.href='user_payment_account.html'">실시간 계좌이체</button><br><br>
+      <h1>결제할 수단을 선택해주세요.<h1><br>
+        <button type="button" name="card" onclick="location.href='user_payment_card.html'"><p class="r">카드결제</p></button><br><br>
+        <button type="button" name="account" onclick="location.href='user_payment_account.html'"><p class="r">실시간 계좌이체</p></button>
+<br><br><button type="button" style="font-family:'Do Hyeon'; font-size:40px;" onclick="document.location='../../main.html'">메인으로</button>
+
 </form>
 </div>
 <ul class="bg-bubbles">

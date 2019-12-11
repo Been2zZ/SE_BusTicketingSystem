@@ -16,12 +16,15 @@
 
     $id = $_SESSION['id'];
 
-    $query = "select day,src,dest,srcTime,destTime,seatNum,price from TICKET where userId = '$id'";
+    $query = "select day,src,dest,srcTime,destTime,seatNum,price from TICKET where userId = '$id' order by srcTime";
     $result = mysqli_query($conn, $query)or die(mysqli_error($conn));
 
     $num = 1;
 
-    echo "<section><div class='tbl-header'>
+    echo "<section>
+    <div></div>
+    <div>
+    <div class='tbl-header'>
     <table cellpadding='0' cellspacing='0' border='0'>
     <thead>
     <tr>
@@ -64,13 +67,18 @@
       $num = $num + 1;
     }
 
-    echo "</tbody></table></div></section>";
+    echo "</tbody></table> </div>
+     </div>
+     <div></div>
+     </section>";
 
     mysqli_close($conn);
  ?>
 <form>
     <button type='button' style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" name='mod_ticket' onclick="location.href='modifyTicket.php'">예매 시간 변경</button><br><br>
     <button type='button' style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" name='remove_ticket' onclick="location.href='removeTicket.php'">예매 취소</button><br><br>
+    <br><br><br>
+    <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
   </form>
   </div>
   <ul class="bg-bubbles">

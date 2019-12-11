@@ -3,6 +3,17 @@
   <head>
     <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
+      <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+      <style>
+        p.r {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 40px;
+        }
+        p.s {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 20px;
+        }
+      </style>
     <title>Card</title>
   </head>
   <body>
@@ -11,25 +22,27 @@
         <form>
   <label>카드번호 :
     <div class="container-width">
-    <input type="number" size="4" pattern="[0-9]" required=''></div>
+    <input class="input1" type="text" size="4" pattern="[0-9]" required=''></div>
     <div class="container-width">
-    <input type="number" size="4" pattern="[0-9]" required=''></div>
+    <input class="input1"  type="text" size="4" pattern="[0-9]" required=''></div>
     <div class="container-width">
-    <input type="number" size="4" pattern="[0-9]" required=''></div>
+    <input class="input1"  type="text" size="4" pattern="[0-9]" required=''></div>
     <div class="container-width">
-    <input type="number" size="4" pattern="[0-9]" required=''></div></label><br>
+    <input class="input1"  type="text" size="4" pattern="[0-9]" required=''></div></label><br>
   <label>cvc번호 :
     <div class="container-width">
-    <input type="number" size="4" pattern="[0-9]" required=''></div></label><br>
+    <input class="input1"  type="text" size="4" pattern="[0-9]" required=''></div></label><br>
   <label>유효기간 :
     <div class="container-width">
-    <input type="number" size="2" pattern="[0-9]" required=''></div> 년
+    <input class="input1"  type="text" size="2" pattern="[0-9]" required=''></div> 년
     <div class="container-width">
-    <input type="number" size="2" pattern="[0-9]" required=''></div> 월
+    <input class="input1"  type="text" size="2" pattern="[0-9]" required=''></div> 월
   </label><br>
 </form>
-<form method="post" action="../php/seasonTicket_payment.php">
-  <button type="submit" name="pay">결제</button>
+<form method="post" action="../php/payment.php">
+  <button type="submit" name="pay"><p class="r">결제</p></button>
+  <br><br><br>
+  <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
 </form>
 </div>
 <ul class="bg-bubbles">

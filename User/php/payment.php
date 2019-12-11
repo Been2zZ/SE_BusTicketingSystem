@@ -28,33 +28,34 @@
     $mileage = $_SESSION['mileage'];    // 현재 마일리지
     $usedMileage = $_POST['mileage'];   // 사용할 마일리지
 
-    print $id."<br>";
+    if ($mileage >= $usedMileage) {
+      // code...
 
-    $new_mileage = $mileage - $usedMileage;
+      if ($usedMileage == 0) {
+        // 마일리지 사용 X -> 적립
+        $per = $price * 0.02;
+        $new_mileage = $mileage + $per;
+        $query = "UPDATE USER_DB SET mileage='$new_mileage' where id='$id'";
+        mysqli_query($conn, $query);
+      } else {
+        // 마일리지 사용
+        $new_mileage = $mileage - $usedMileage;
+        $query = "UPDATE USER_DB SET mileage='$new_mileage' where id='$id'";
+        mysqli_query($conn, $query);
+      }
 
-    print $new_mileage."<br>";
+      $query2 = "INSERT INTO TICKET(num, day, src, dest, srcTime, destTime, seatNum, price, userId)
+      values('$null', '$day', '$src', '$dest', '$srcTime', '$destTime', '$seatNum', '$price', '$id')";
 
-    // 예외처리 : -값인 경우
-    if ($usedMileage == 0) {
-      // 마일리지 사용 X -> 적립
-      $per = $mileage * 0.5;
-      $new_mileage = $mileage + $per;
+      mysqli_query($conn, $query2) or die(mysqli_error($conn));
 
-      $query = "UPDATE USER_DB SET mileage='$new_mileage' where id='$id'";
-      mysqli_query($conn, $query);
+      print "<script>alert('결제가 완료되었습니다.')</script>";
+      print "<script>document.location.href='../html/main_mem.html'</script>";
     } else {
-      // 마일리지 사용
-      $query = "UPDATE USER_DB SET mileage='$new_mileage' where id='$id'";
-      mysqli_query($conn, $query);
+      // code...
+      print "<script>alert('보유한 마일리지보다 큰 값을 입력했습니다.')</script>";
+      print "<script>document.location.href='javascript:history.go(-1)'</script>";
     }
-
-    $query2 = "INSERT INTO TICKET(num, day, src, dest, srcTime, destTime, seatNum, price, userId)
-    values('$null', '$day', '$src', '$dest', '$srcTime', '$destTime', '$seatNum', '$price', '$id')";
-
-    mysqli_query($conn, $query2) or die(mysqli_error($conn));
-
-    print "<script>alert('결제가 완료되었습니다.')</script>";
-    print "<script>document.location.href='../html/main_mem.html'</script>";
   }
 
 ?>

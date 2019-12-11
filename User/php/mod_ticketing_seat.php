@@ -62,7 +62,7 @@
       where day='$modDay' and src='$modSrc' and dest='$modDest' and srcTime='$modSrcTime' and phoneNum='$phoneNum'";
       mysqli_query($conn, $query) or die(mysqli_error($conn));
 
-      print "<script>alert('버스의 운행정보 수정이 완료되었습니다.')</script>";
+      print "<script>alert('버스의 예매 시간이 변경되었습니다.')</script>";
       print "<script>document.location.href='user_searchTicket.php'</script>";
     } else {
       // 회원

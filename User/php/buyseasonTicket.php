@@ -11,8 +11,13 @@
   // $_POST 로 정기권 일 수 받아온 후, [정기권 일수,구매 날짜:now()] USER_DB에 저장
   // 정기권 일수, 구매날짜 - update
 
-  $query = "UPDATE USER_DB SET season='$season' where id='$id'";
+  $date_fomat = "select DATE_FORMAT(now(), '%Y-%m-%d')";
+  $result = mysqli_query($conn, $date_fomat);
+  $date = mysqli_fetch_array($result);
+
+  $query = "UPDATE USER_DB SET season='$season',season_start='$date[0]' where id='$id'";
   mysqli_query($conn, $query);
 
-  print "<script>document.location.href='../html/seasonTicket_payment.html'</script>";
+  print "<script>alert('결제가 완료되었습니다.')</script>";
+  print "<script>document.location.href='../html/mypage.html'</script>";
 ?>
