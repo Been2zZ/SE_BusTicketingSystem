@@ -11,15 +11,27 @@
       <div class="container">
 <?php
     session_start();
-    ini_set('display_errors', '1');
+    // ini_set('display_errors', '1');
     $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
-    if ($_SESSION['phoneNum'] == null) {
-      // 예매권 없는 경우
+    $phoneNum = $_POST['phoneNum'];
+
+    // if ($_SESSION['phoneNum'] == null) {
+    //   // 예매권 없는 경우
+    //   print "<script>alert('예매권이 존재하지 않습니다.')</script>";
+    //   print "<script>document.location.href='../../main.html'</script>";
+    // }
+    // $phoneNum = $_SESSION['phoneNum'];
+
+    $query3 = "select day,src,dest,srcTime,destTime,seatNum,price from TICKET where phoneNum = '$phoneNum'";
+    $result3 = mysqli_query($conn, $query3);
+    $row3 = mysqli_fetch_array($result3);
+
+    if ($row3[0] == null) {
+      // 예매권이 없는 경우
       print "<script>alert('예매권이 존재하지 않습니다.')</script>";
-      print "<script>document.location.href='../../main.html'</script>";
+        print "<script>document.location.href='../../main.html'</script>";
     }
-    $phoneNum = $_SESSION['phoneNum'];
 
     $query = "select day,src,dest,srcTime,destTime,seatNum,price from TICKET where phoneNum = '$phoneNum'";
     $result = mysqli_query($conn, $query);

@@ -12,12 +12,38 @@
 
 <?php
     session_start();
-    ini_set('display_errors', '1');
+    // ini_set('display_errors', '1');
     $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
     $src = $_POST['src'];
     $dest = $_POST['dest'];
     $day = $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
+
+    if ($src == $dest) {
+      // code...
+      print "<script>alert('출도착지가 동일합니다. 다시 입력해주세요.')</script>";
+      print "<script>document.location.href='javascript:history.go(-1)'</script>";
+    }
+
+    $query_check = "select DATE_FORMAT(now(), '%Y-%m-%d')";  // today
+    $result_check = mysqli_query($conn, $query_check);
+    $row_check = mysqli_fetch_array($result_check);
+
+    $query_check2 = "SELECT DATE_ADD('$row_check[0]', INTERVAL 7 DAY)";  // (today+7)일
+    $result_check2 = mysqli_query($conn, $query_check2);
+    $row_check2 = mysqli_fetch_array($result_check2);
+
+    if ($day < $row_check[0]) {
+      // 현재 날짜보다 이전
+      print "<script>alert('지난 날짜에 관한 예매가 불가능 합니다.')</script>";
+      print "<script>document.location.href='javascript:history.go(-1)'</script>";
+    }
+
+    if ($day > $row_check2[0]) {
+      // 일주일 후 날짜 조회 시
+      print "<script>alert('아직 배차된 버스가 존재하지 않습니다.')</script>";
+      print "<script>document.location.href='javascript:history.go(-1)'</script>";
+    }
 
     $query2 = "select busId,busLevel from BUS_DB where src='$src' and dest='$dest'";
     $result2 = mysqli_query($conn, $query2);

@@ -1,7 +1,7 @@
 <!-- 예매권 시간 변경 -->
 <?php
     session_start();
-    ini_set('display_errors', '1');
+    // ini_set('display_errors', '1');
     $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
     $modNum = $_SESSION['modNum'];

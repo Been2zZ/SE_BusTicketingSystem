@@ -1,11 +1,11 @@
 <!-- 버스 운행 추가 -->
 <?php
-    // session_start();
-    ini_set('display_errors', '1');
+    session_start();
+    // ini_set('display_errors', '1');
     $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
     // 버스 아이디
-    $busId = $_POST["busId"];
+    $busId = $_SESSION["selectBusId"];
     // 운행 날짜
     $date = $_POST["year"].'-'.$_POST["month"].'-'.$_POST["day"];
     // 출발 시간
@@ -27,7 +27,7 @@
       print "<script>alert('버스 운행 추가가 완료되었습니다.')</script>";
     }
 
-    print "<script>document.location.href='../html/addBusDrive.html'</script>";
+    print "<script>document.location.href='../html/BUSDriveManagement.html'</script>";
 
     mysqli_close($conn);
  ?>

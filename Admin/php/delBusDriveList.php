@@ -4,17 +4,17 @@
     <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
       <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
-    <title>Delete User</title>
+    <title>Del Bus Drive</title>
   </head>
   <body>
     <div class="wrapper">
     <div class="container">
 <?php
   session_start();
-  // ini_set('display_errors', '1');
+  ini_set('display_errors', '1');
   $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
-  $query = "select * from USER_DB";
+  $query = "select * from BUS_DB";
   $result = mysqli_query($conn, $query);
 
   echo "<section>
@@ -24,11 +24,11 @@
   <table cellpadding='0' cellspacing='0' border='0'>
   <thead>
   <tr>
-  <td>아이디</td>
-  <td>비밀번호</td>
-  <td>이름</td>
-  <td>연락처</td>
-  <td>마일리지</td>
+  <td>고유번호</td>
+  <td>출발지</td>
+  <td>도착지</td>
+  <td>버스등급</td>
+  <td>가격</td>
   </tr></thead>
   </table>
   </div>";
@@ -55,13 +55,13 @@
   mysqli_close($conn);
 ?>
 
-
-<form method="post" action="delete.php">
-<input type="text" name="userId" placeholder="삭제하려는 회원의 아이디를 입력해주세요."><br><br>
-<button type="submit" style="font-family:'Do Hyeon'; font-size:40px;" name="a_seat">삭제</button>
-<br><br><br><br>
-<a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
-    </form>
+<form method="post" action="../php/delBusDriveTimeList.php">
+  <h2>삭제를 원하는 버스의 고유번호를 입력해주세요.<h2><br>
+  <input type="text" name="busId" placeholder="버스 고유번호를 입력해주세요..." required=''><br><br>
+  <button type="submit" style="font-family:'Do Hyeon'; font-size:40px;" name="delBusdrive" required=''>선택</button>
+  <br><br><br>
+  <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
+</form>
   </div>
   <ul class="bg-bubbles">
   <li></li>

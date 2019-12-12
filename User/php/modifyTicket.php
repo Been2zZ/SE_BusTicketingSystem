@@ -71,10 +71,10 @@
 ?>
 
 <form method="post" action="modify.php">
-  <h2  style="font-family: 'Do Hyeon', sans-serif; font-size:30px;">시간을 변경할 예매권의 번호를 입력해주세요.<h2>
+  <h2 style="font-family: 'Do Hyeon', sans-serif; font-size:30px;">시간을 변경할 예매권의 번호를 입력해주세요.<h2>
   <input type="text" name="modNum" placeholder="예매권 번호를 입력하세요..." required=''>
   <button type="submit"  style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" name="inputmod">입력</button>
-<br><br>
+  <br><br>
   <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
 </form>
 </div>

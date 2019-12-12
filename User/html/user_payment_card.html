@@ -4,16 +4,6 @@
     <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="../../bttn.css?after">
       <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
-      <style>
-        p.r {
-        font-family: 'Do Hyeon', sans-serif;
-        font-size: 40px;
-        }
-        p.s {
-        font-family: 'Do Hyeon', sans-serif;
-        font-size: 20px;
-        }
-      </style>
     <title>Card</title>
   </head>
   <body>
@@ -39,9 +29,9 @@
     <input class="input1"  type="text" size="2" pattern="[0-9]" required=''></div> 월
   </label><br>
 </form>
-<form method="post" action="../php/payment.php">
-  <button type="submit" name="pay"><p class="r">결제</p></button>
-  <br><br><br>
+<form method="post" action="../php/user_payment_check.php">
+  <button type="submit" style="font-family:'Do Hyeon'; font-size:40px;" name="pay">결제</button>
+  <br><br><br><br>
   <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
 </form>
 </div>

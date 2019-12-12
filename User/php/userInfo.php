@@ -11,7 +11,7 @@
       <div class="container">
 <?php
     session_start();
-    ini_set('display_errors', '1');
+    // ini_set('display_errors', '1');
     $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
     $id = $_SESSION['id'];
@@ -62,7 +62,7 @@
  ?>
 <form>
     <button type='button' name='mod_mem' style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" onclick="location.href='../html/modifyMem.html'">회원정보 수정</button><br><br>
-    <button type='button' name='del_mem' style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" onclick="location.href='deleteMem.php'">회원 탈퇴</button><br><br>
+    <button type='button' name='del_mem' style="font-family: 'Do Hyeon', sans-serif; font-size:40px;" onclick="location.href='../html/del_Mem.html'">회원 탈퇴</button><br><br>
     <br><br>
     <a href="javascript:history.go(-1)">&nbsp B A C K &nbsp</a>
 </form>

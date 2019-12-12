@@ -1,6 +1,6 @@
 <?php
   session_start();
-  ini_set('display_errors', '1');
+  // ini_set('display_errors', '1');
   $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
   $null = "0";
@@ -20,13 +20,22 @@
     values('$null', '$day', '$src', '$dest', '$srcTime', '$destTime', '$seatNum', '$price', '$phoneNum')";
     mysqli_query($conn, $query) or die(mysqli_error($conn));
 
+    // print "<script language = 'javascript'>var result = confirm('결제를 진행하시겠습니까?');
+    // if (result) {
+    //   alert('결제가 완료되었습니다.');
+    //   document.location.href='../../main.html';
+    // } else {
+    //   document.location.href='../../main.html';
+    // }
+    // </script>";
     print "<script>alert('결제가 완료되었습니다.')</script>";
     print "<script>document.location.href='../../main.html'</script>";
   } else {
     // 회원
     $id = $_SESSION['id'];
     $mileage = $_SESSION['mileage'];    // 현재 마일리지
-    $usedMileage = $_POST['mileage'];   // 사용할 마일리지
+    // $usedMileage = $_POST['mileage'];   // 사용할 마일리지
+    $usedMileage = $_SESSION['usedMileage'];
 
     if ($mileage >= $usedMileage) {
       // code...
@@ -57,5 +66,4 @@
       print "<script>document.location.href='javascript:history.go(-1)'</script>";
     }
   }
-
 ?>

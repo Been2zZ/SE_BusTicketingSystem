@@ -31,7 +31,7 @@
     </form>
 <?php
   session_start();
-  ini_set('display_errors', '1');
+  // ini_set('display_errors', '1');
   $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
   $id = $_SESSION['id'];
@@ -45,7 +45,7 @@
   $_SESSION['mileage'] = $row[0];
 ?>
 
-<form method="post" action="payment.php">
+<form method="post" action="payment_check.php">
   <div class="fontsizeup">
   !마일리지 사용시 적립이 불가합니다.!<br></div>
   <div class="container-width">

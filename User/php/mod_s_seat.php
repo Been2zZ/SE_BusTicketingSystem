@@ -12,7 +12,7 @@
 
 <?php
   session_start();
-  ini_set('display_errors', '1');
+  // ini_set('display_errors', '1');
   $conn = mysqli_connect("localhost", "root", "67734107", "SE_BusTicketingSystem", "3306") or die("FAIL.");
 
   $day = $_SESSION['day'];
